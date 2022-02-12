@@ -1,4 +1,4 @@
-// require dependencies
+
 const fs = require('fs');
 const path = require('path');
 const router = require('express').Router();
@@ -17,7 +17,7 @@ router.post('/notes', (req, res) => {
 
     
     if (!req.body.title || !req.body.text) {
-        res.status(400).send('Please enter title and text.');
+        res.status(404).send('Please enter title and text.');
     } else {
         const note = req.body;
 
@@ -33,6 +33,24 @@ router.post('/notes', (req, res) => {
 });
 
 
+router.delete('/notes/:id', (req, res) => {
+    let id = req.params.id;
+
+    for (let i = 0; i < notes.length; i++) {
+        if (notes[i].id === id) {
+            notes.splice(i, 1);
+            
+            fs.writeFileSync(
+                path.join(__dirname, '../../db/db.json'),
+                JSON.stringify({ notes: notes }, null, 2)
+            );
+
+            res.json(notes)
+            
+            return;
+        }
+    }
+});
 
 
 module.exports = router;
