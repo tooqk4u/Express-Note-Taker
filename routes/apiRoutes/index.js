@@ -5,17 +5,17 @@ const router = require('express').Router();
 const { notes } = require('../../db/db.json');
 const uniqid = require('uniqid');
 
-
+// GET /api/notes and return all saved notes as json
 router.get('/notes', (req, res) => {
     res.json(notes);
 });
 
-
+// POST /api/notes get a new note that saves on request and returns new note to client
 router.post('/notes', (req, res) => {
-    
+    // id set 
     req.body.id = uniqid();
 
-    
+    // Validate
     if (!req.body.title || !req.body.text) {
         res.status(400).send('Please enter title and text.');
     } else {
@@ -32,7 +32,7 @@ router.post('/notes', (req, res) => {
     }
 });
 
-
+// Delete /api/note using id to select note to be deleted
 router.delete('/notes/:id', (req, res) => {
     let id = req.params.id;
 
@@ -52,5 +52,5 @@ router.delete('/notes/:id', (req, res) => {
     }
 });
 
-
+// Export router
 module.exports = router;

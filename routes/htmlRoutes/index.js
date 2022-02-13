@@ -1,17 +1,17 @@
 const path = require('path');
 const router = require('express').Router();
 
-// get request for index.html page
+// GET request for index.html page
 router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/index.html'));
 });
 
-// get request for note.html page
+// GET request for note.html page
 router.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/notes.html'));
 });
 
-// get request for * 
+// GET request for default index.html if 2 previous requests fail 
 router.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/index.html'));
 });
