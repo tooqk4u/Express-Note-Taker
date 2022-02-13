@@ -1,13 +1,19 @@
 # Express Note Taker
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+ [![MIT License](https://img.shields.io/badge/License-MIT%20License-informational)](https://choosealicense.com/licenses/mit/)
+
 
 ---
 ## Link
+![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)
+  
 https://stormy-oasis-69385.herokuapp.com/notes
 
 
 ## Description 
-  
+
+![JavaScript](https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![node.js](https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white)
+
 Keep track of important information with this Note Taker application. Create, view, and remove different notes with titles and content. The notes are persistant as this is a server deployed application. 
 
 ---
