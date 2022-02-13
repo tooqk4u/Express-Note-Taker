@@ -1,4 +1,4 @@
-
+// Require dependencies
 const fs = require('fs');
 const path = require('path');
 const router = require('express').Router();
@@ -17,7 +17,7 @@ router.post('/notes', (req, res) => {
 
     
     if (!req.body.title || !req.body.text) {
-        res.status(404).send('Please enter title and text.');
+        res.status(400).send('Please enter title and text.');
     } else {
         const note = req.body;
 
