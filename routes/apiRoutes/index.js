@@ -19,9 +19,9 @@ router.post('/notes', (req, res) => {
     if (!req.body.title || !req.body.text) {
         res.status(400).send('Please enter title and text.');
     } else {
-        const note = req.body;
+        const newNote = req.body;
 
-        notes.push(note);
+        notes.push(newNote);
 
         fs.writeFileSync(
             path.join(__dirname, '../../db/db.json'),
