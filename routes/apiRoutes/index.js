@@ -17,7 +17,7 @@ router.post('/notes', (req, res) => {
 
     // Validate
     if (!req.body.title || !req.body.text) {
-        res.status(400).send('Please enter title and text.');
+        return false
     } else {
         const newNote = req.body;
 
